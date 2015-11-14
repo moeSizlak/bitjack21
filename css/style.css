@@ -1,0 +1,286 @@
+@charset "utf-8";
+@import url('reset.css');
+
+/*____________Main Style and Containers______________*/
+
+body{background:#333f35; font:normal bold 15px "Trebuchet MS"; color:#bcc09a}
+
+a{text-decoration:none; color:white}
+
+ul{list-style:none}
+
+#wrapper{
+	position:relative;
+	width:860px;
+	height:630px; /*600*/
+	margin:0px auto
+}
+
+/*____________Game Table______________________*/
+#table {
+	position:relative;
+	float:left;
+	width:860px;
+	height:600px;
+	background:url(../images/back.jpg)
+}
+
+	#table #rules{
+		position:absolute;
+		width:100%;
+		height:90%;
+		background:url(../images/rLogo.png) no-repeat center center
+	}	
+	
+	#table #players{
+		position:absolute;
+		width:100%;
+		height:83%;
+		background:url(../images/players1.png) no-repeat bottom center
+	}
+	
+	#table #msg{
+		position:absolute;
+		left:250px;
+		top:260px;
+		width:360px;
+		background:#bcc09a;
+		border:3px double #333f35;
+		text-align:center;
+		padding:5px 0;
+		font-size:22px;
+		color:#333f35;
+		display:none;
+		z-index:9999
+	}
+	
+	#table #p1msg{
+		position:absolute;
+		left:250px;
+		top:430px;
+		width:160px;
+		background:#bcc09a;
+		border:3px double #333f35;
+		text-align:center;
+		padding:5px 0;
+		font-size:22px;
+		color:#333f35;
+		display:none;
+		z-index:9999
+	}
+	
+	#table #p2msg{
+		position:absolute;
+		left:20px;
+		top:400px;
+		width:160px;
+		background:#bcc09a;
+		border:3px double #333f35;
+		text-align:center;
+		padding:5px 0;
+		font-size:22px;
+		color:#333f35;
+		display:none;
+		z-index:9999
+	}
+	
+	#table #p3msg{
+		position:absolute;
+		left:540px;
+		top:440px;
+		width:160px;
+		background:#bcc09a;
+		border:3px double #333f35;
+		text-align:center;
+		padding:5px 0;
+		font-size:22px;
+		color:#333f35;
+		display:none;
+		z-index:9999
+	}
+	
+	#table #gameid{
+		position:absolute;
+		top:540px;
+		left:10px;
+		font-size:12px;
+		color:#C18D53;
+		z-index:4
+	}
+
+	#table #cryptoproof{
+		position:absolute;
+		width:860px;
+		top:570px;
+		left:0px;
+		font-size:12px;
+		color:#C18D53;
+		z-index:4
+	}
+
+	#table #cpcurrent{
+                clear:both;
+                width:860px;
+		height:100px;
+                font-size:12px;
+                color:#C18D53;
+                z-index:4
+        }
+
+	#table #cplast{
+		clear:both;
+		width:860px;
+		font-size:12px;
+                color:#C18D53;
+                z-index:4
+        }
+
+
+	
+/*____________Bets and Money__________________*/	
+	#table #score{
+		float:left;
+		width:225px;
+		height:105px;
+		margin:45px 0 0 70px;
+		background:url(../images/moneyBack.png) no-repeat
+	}
+		#score li{
+			float:left;
+			margin:13px 15px;
+			padding:0px 0 0 40px;
+			background:url(../images/moneyIcon.png) no-repeat
+		}
+			
+			#score li span{font-size:20px}
+			#score li#money{background-position:top left}
+			#score li#bet{background-position:bottom left}
+	
+	#table #chips{
+		position:absolute;
+		width:250px;
+		height:100px;
+		left:30px;
+		bottom:33px
+	}
+	
+		#chips li{
+			position:relative;
+			float:left;
+			width:40px;
+			height:40px;
+			margin-left:15px;
+			cursor:pointer;
+			display:none
+		}
+			#chips .chip img{position:absolute; width:40px; height:40px}
+			#chips li.c5{margin-top:15px}
+			#chips li.c10{margin-top:30px}
+			#chips li.c0{margin-top:45px}
+
+/*____________Game Control______________*/			
+	
+	#table #control{
+		position:absolute;
+		width:350px;
+		height:50px;
+		left:30%;
+		bottom:40px
+	}
+	
+		#control div{
+			float:left;
+			width:61px;
+			height:34px;
+			margin:10px 0 0 135px;
+			padding-top:3px;
+			text-align:center;
+			font-size:18px;
+			background:url(../images/control.png) no-repeat;
+			display:none;
+			cursor:pointer
+		}
+			#control div:hover{color:white}
+			#control div:active{background:url(../images/controlOn.png) no-repeat}
+				#control #hit, #control #stay, #control #double, #control #split{margin-left:10px;margin-right:0px;}
+				/*#control #double{font-size:12px}*/
+				/*#conrrol #hit, #conrrol #stay, #conrrol #double, #conrrol #split, #conrrol #deal{position:relative;margin:auto auto}*/
+
+/*____________Game Field____________________*/		
+
+	#table #gameField{
+		position:relative;
+		float:right;
+		width:500px;
+		height:430px;
+		right:60px;
+		background:url(../images/shoe.png) right top no-repeat
+	}
+	
+		#gameField .cardM{
+			position:absolute; 
+			top:50px; 
+			right:100px; 
+			display:none;
+			z-index:200
+		}
+		
+		.curValue{
+			position:absolute;
+			left:300px;
+			top:20px;
+			font-size:22px;
+			color:#C18D53;
+			z-index:4
+		}
+		
+			.curValue.player1{top:400px}
+			.curValue.player2{top:370px;left:60px}
+			.curValue.player3{top:440px;left:500px}
+
+#cptable
+{
+  margin-left:auto;
+  margin-right:auto;
+  color: #000000;
+  border-width: medium;
+	border-spacing: 3px;
+	border-style: groove;
+	border-color: red;
+	border-collapse: separate;
+}
+
+#cptable td, th
+{
+  border-collapse:collapse;
+  border-width:1px;
+  border-color: Black;
+  border-style: solid;
+}
+
+#cptable tr.odd td{
+  background-color: #ffffff;
+  padding:4px;
+}
+
+#cptable tr.even td {
+  background-color: #CDE0F6;
+  padding:4px;
+}
+
+#cptable th
+{
+  padding:4px;
+  background-color:#D8D8D8  ;
+  color:#787878 ;
+}
+
+#csinput{
+  display:none
+}
+#cstext{
+  display:none
+}
+	
+/*____________Footer_______________________*/
+footer{position:relative; margin-top:250px; width:100%; text-align:center}

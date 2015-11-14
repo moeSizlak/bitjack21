@@ -1,0 +1,14 @@
+
+#table #rules{
+	position:absolute;
+	left:0;
+	background:url(../images/rLogo2.png) no-repeat center center
+}	
+
+#table #players{
+	position:absolute;
+	left:0;
+	background:url(../images/players1.png) no-repeat bottom center
+}
+
+footer{float:left}
